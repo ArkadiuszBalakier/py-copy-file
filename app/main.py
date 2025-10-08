@@ -11,7 +11,10 @@ def copy_file(command: str) -> None:
         if file_name_to_copy == copied_file_name:
             return
         try:
-            with open(file_name_to_copy, "r") as file, open(copied_file_name, "w") as copied_file:
+            with (
+                open(file_name_to_copy, "r") as file,
+                open(copied_file_name, "w") as copied_file
+            ):
                 copied_file.write(file.read())
         except FileNotFoundError as e:
             print(e)
