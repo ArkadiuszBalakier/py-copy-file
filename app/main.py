@@ -1,6 +1,8 @@
 def copy_file(command: str) -> None:
     arguments_list = command.split()
-    if arguments_list[0] == "cp" and len(arguments_list) == 3:
+    if len(arguments_list) != 3:
+        return
+    if arguments_list[0] == "cp":
         file_name_to_copy = arguments_list[1]
         copied_file_name = arguments_list[2]
         if file_name_to_copy == copied_file_name:
